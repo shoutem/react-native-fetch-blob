@@ -30,6 +30,11 @@ dispatch_queue_t fsQueue;
 @synthesize documentController;
 @synthesize bridge = _bridge;
 
++ (BOOL)requiresMainQueueSetup
+{
+    return YES;
+}
+
 - (dispatch_queue_t) methodQueue {
     if(commonTaskQueue == nil)
         commonTaskQueue = dispatch_queue_create("RNFetchBlob.queue", DISPATCH_QUEUE_SERIAL);
